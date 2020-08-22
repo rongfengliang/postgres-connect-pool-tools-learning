@@ -20,12 +20,12 @@ services:
     volumes:
       - "./odyssey-dev.conf:/etc/odyssey/odyssey.conf"
   prom1:
-    image: jwitrick/pgbouncer_exporter:v0.4.1
+    image: dalongrong/pgbouncer_exporter:v0.4.1
     ports:
     - "9127:9127"
-    command: --pgBouncer.connectionString="postgres://postgres:dalong@1pgbouncer:6543/pgbouncer?sslmode=disable"
+    command: --pgBouncer.connectionString="postgres://postgres:dalong@pgbouncer:6543/pgbouncer?sslmode=disable"
   prom2:
-    image: jwitrick/pgbouncer_exporter:v0.4.1
+    image: dalongrong/pgbouncer_exporter:v0.4.1
     ports:
     - "9128:9127"
     command: --pgBouncer.connectionString="postgres://postgres:dalong@app:6432/console?sslmode=disable"
